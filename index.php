@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../config/db.php';
+include './config/db.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,26 +10,26 @@ include '../config/db.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="../assets/img/logo1.png" />
+    <link rel="icon" type="image/png" href="./assets/img/logo1.png" />
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../assets/_login/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/_login/vendor/bootstrap/css/bootstrap.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../assets/_login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/_login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../assets/_login/fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/_login/fonts/iconic/css/material-design-iconic-font.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../assets/_login/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="./assets/_login/vendor/animate/animate.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../assets/_login/vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/_login/vendor/css-hamburgers/hamburgers.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../assets/_login/vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/_login/vendor/animsition/css/animsition.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../assets/_login/vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/_login/vendor/select2/select2.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../assets/_login/vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="./assets/_login/vendor/daterangepicker/daterangepicker.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../assets/_login/css/util.css">
-    <link rel="stylesheet" type="text/css" href="../assets/_login/css/main.css">
+    <link rel="stylesheet" type="text/css" href="./assets/_login/css/util.css">
+    <link rel="stylesheet" type="text/css" href="./assets/_login/css/main.css">
     <!--===============================================================================================-->
 </head>
 
@@ -43,7 +43,7 @@ include '../config/db.php';
                         <!-- <i class="zmdi zmdi-font"></i> -->
 
                         <!-- Logo Pada Form Login -->
-                        <img src="../assets/img/logo.png" width="100">
+                        <img src="./assets/img/logo.png" width="100">
                     </span>
                     <!-- <span class="login100-form-title p-b-26">
                         KyIms
@@ -77,17 +77,17 @@ include '../config/db.php';
 
                 <!-- Proses pengecekan username dan password dari database  -->
                 <?php
-				if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-					$pass = sha1($_POST['password']);
-					$sqlCek = mysqli_query($con, "SELECT * FROM tb_admin WHERE username='$_POST[username]' AND password='$pass' AND aktif='Y'");
-					$jml = mysqli_num_rows($sqlCek);
-					$d = mysqli_fetch_array($sqlCek);
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                    $pass = sha1($_POST['password']);
+                    $sqlCek = mysqli_query($con, "SELECT * FROM tb_admin WHERE username='$_POST[username]' AND password='$pass' AND aktif='Y'");
+                    $jml = mysqli_num_rows($sqlCek);
+                    $d = mysqli_fetch_array($sqlCek);
 
-					if ($jml > 0) {
-						$_SESSION['admin'] = $d['id_admin'];
+                    if ($jml > 0) {
+                        $_SESSION['admin'] = $d['id_admin'];
 
 
-						echo "
+                        echo "
 									<script type='text/javascript'>
 									setTimeout(function () { 
 									
@@ -101,11 +101,11 @@ include '../config/db.php';
 									});    
 									},10);  
 									window.setTimeout(function(){ 
-									window.location.replace('./dashboard.php');
+									window.location.replace('./admin/dashboard.php');
 									} ,3000);   
 									</script>";
-					} else {
-						echo "
+                    } else {
+                        echo "
 									<script type='text/javascript'>
 									setTimeout(function () { 
 									
@@ -122,9 +122,9 @@ include '../config/db.php';
 									window.location.replace('index.php');
 									} ,3000);   
 									</script>";
-					}
-				}
-				?>
+                    }
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -133,24 +133,24 @@ include '../config/db.php';
     <div id="dropDownSelect1"></div>
 
     <!--===============================================================================================-->
-    <script src="../assets/_login/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="./assets/_login/vendor/jquery/jquery-3.2.1.min.js"></script>
     <!--===============================================================================================-->
-    <script src="../assets/_login/vendor/animsition/js/animsition.min.js"></script>
+    <script src="./assets/_login/vendor/animsition/js/animsition.min.js"></script>
     <!--===============================================================================================-->
-    <script src="../assets/_login/vendor/bootstrap/js/popper.js"></script>
-    <script src="../assets/_login/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./assets/_login/vendor/bootstrap/js/popper.js"></script>
+    <script src="./assets/_login/vendor/bootstrap/js/bootstrap.min.js"></script>
     <!--===============================================================================================-->
-    <script src="../assets/_login/vendor/select2/select2.min.js"></script>
+    <script src="./assets/_login/vendor/select2/select2.min.js"></script>
     <!--===============================================================================================-->
-    <script src="../assets/_login/vendor/daterangepicker/moment.min.js"></script>
-    <script src="../assets/_login/vendor/daterangepicker/daterangepicker.js"></script>
+    <script src="./assets/_login/vendor/daterangepicker/moment.min.js"></script>
+    <script src="./assets/_login/vendor/daterangepicker/daterangepicker.js"></script>
     <!--===============================================================================================-->
-    <script src="../assets/_login/vendor/countdowntime/countdowntime.js"></script>
+    <script src="./assets/_login/vendor/countdowntime/countdowntime.js"></script>
     <!--===============================================================================================-->
 
     <!-- Sweet Alert -->
-    <script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
-    <script src="../assets/_login/js/main.js"></script>
+    <script src="./assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+    <script src="./assets/_login/js/main.js"></script>
 
 </body>
 
