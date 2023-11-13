@@ -2,7 +2,7 @@
 <?php
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-$con = new mysqli("localhost", "root", "", "db_imas") or die(mysqli_error($con));
+$con = new mysqli("localhost", "java2779_DickyImam", "ameridf16", "java2779_Dicky_UTS") or die(mysqli_error($con));
 
 
 
