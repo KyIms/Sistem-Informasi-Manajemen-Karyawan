@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/example/public_html/Dicky_UTS
+    - export DEPLOYPATH=/home/java2779/public_html/Dicky_UTS
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp .hintrc $DEPLOYPATH
     - /bin/cp -R admin $DEPLOYPATH
